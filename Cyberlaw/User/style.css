@@ -1,0 +1,28 @@
+﻿body {
+    background-color:#2b2b39;
+}
+
+
+.ctn {
+    padding: 5px;
+    margin-top: 100px;
+}
+
+.form-control{
+    margin:5px;
+    border-radius:30px 30px;
+}
+
+#FileUpload1{
+    text-align:center;
+    display:block;
+    color:red;
+
+}
+
+.btn1{
+    border:1px solid black;
+    width:50%;
+    border-radius:10px 10px;
+}
+

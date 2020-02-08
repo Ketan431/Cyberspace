@@ -1,0 +1,29 @@
+basic skills required to become software engineer
+
+1.Prior knowledge of programming languages like c/c++,
+java,python,javascript,php,html/css
+
+2.basic knowledge of linux os like ubuntu,fedora in terms of
+a.file sharing
+b.shell scripting 
+c.ssh
+d.directories
+
+3.databases like oracle,sql server,mysql
+a.joins 
+b.import/export
+c.normalization
+
+4.excel
+a.manipulation
+b.creating charts and graphs
+c.formula
+d.keyboard shortcuts
+e.working with pivot tables
+
+5.sdlc knowledge
+a.advanced knowledge of each phases in sdlc
+
+
+
+

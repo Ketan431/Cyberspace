@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cyberlawModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="u_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="f_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="l_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="addr" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="p_code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="about" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="complain">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="complain" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'cyberlaw.dbo.feedback' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="usrname" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="service" />
+      <PropertyRef Name="feedback" />
+    </Key>
+    <Property Name="usrname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="service" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="feedback" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="members">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="member_id" Type="varchar" MaxLength="11" StoreGeneratedPattern="Computed" />
+    <Property Name="image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="membership" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="payment" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="desc" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="from" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="to" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="subject" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="message" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="admin_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="report">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="analysis" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="t_complains" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="t_appoint" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'cyberlaw.dbo.section' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="section">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Sections" />
+      <PropertyRef Name="Offences" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sections" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Offences" Type="varchar" MaxLength="350" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'cyberlaw.dbo.tbl_appointment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_appointment">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="c_email" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="purpose" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="purpose" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_lawyer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lawyer_id" Type="varchar" MaxLength="11" StoreGeneratedPattern="Computed" />
+    <Property Name="image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="position" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="achieve" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'cyberlaw.dbo.tbl_login' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_login">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="category" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="category" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblproducts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prodID" Type="varchar" MaxLength="11" StoreGeneratedPattern="Computed" />
+    <Property Name="image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="prodname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="category" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="productdesc" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_members_user_login">
+    <End Role="user_login" Type="Self.user_login" Multiplicity="1" />
+    <End Role="members" Type="Self.members" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="user_login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="members">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_1_Table_1">
+    <End Role="user_login" Type="Self.user_login" Multiplicity="1" />
+    <End Role="user_login1" Type="Self.user_login" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="user_login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user_login1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_login_admin">
+    <End Role="admin" Type="Self.admin" Multiplicity="1" />
+    <End Role="tbl_login" Type="Self.tbl_login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_login">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_login_tbl_lawyer">
+    <End Role="tbl_lawyer" Type="Self.tbl_lawyer" Multiplicity="1" />
+    <End Role="tbl_login" Type="Self.tbl_login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_lawyer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_login">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="cyberlawModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="complain" EntityType="Self.complain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="members" EntityType="Self.members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="messages" EntityType="Self.messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="report" EntityType="Self.report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_lawyer" EntityType="Self.tbl_lawyer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblproducts" EntityType="Self.tblproducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_login" EntityType="Self.user_login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="feedback" EntityType="Self.feedback" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [feedback].[usrname] AS [usrname], 
+    [feedback].[email] AS [email], 
+    [feedback].[service] AS [service], 
+    [feedback].[feedback] AS [feedback]
+    FROM [dbo].[feedback] AS [feedback]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="section" EntityType="Self.section" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [section].[ID] AS [ID], 
+    [section].[Sections] AS [Sections], 
+    [section].[Offences] AS [Offences]
+    FROM [dbo].[section] AS [section]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_appointment" EntityType="Self.tbl_appointment" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_appointment].[id] AS [id], 
+    [tbl_appointment].[c_name] AS [c_name], 
+    [tbl_appointment].[c_email] AS [c_email], 
+    [tbl_appointment].[date] AS [date], 
+    [tbl_appointment].[purpose] AS [purpose], 
+    [tbl_appointment].[status] AS [status]
+    FROM [dbo].[tbl_appointment] AS [tbl_appointment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_login" EntityType="Self.tbl_login" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_login].[id] AS [id], 
+    [tbl_login].[username] AS [username], 
+    [tbl_login].[password] AS [password], 
+    [tbl_login].[category] AS [category]
+    FROM [dbo].[tbl_login] AS [tbl_login]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_members_user_login" Association="Self.FK_members_user_login">
+      <End Role="user_login" EntitySet="user_login" />
+      <End Role="members" EntitySet="members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_1_Table_1" Association="Self.FK_Table_1_Table_1">
+      <End Role="user_login" EntitySet="user_login" />
+      <End Role="user_login1" EntitySet="user_login" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_login_admin" Association="Self.FK_tbl_login_admin">
+      <End Role="admin" EntitySet="admin" />
+      <End Role="tbl_login" EntitySet="tbl_login" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_login_tbl_lawyer" Association="Self.FK_tbl_login_tbl_lawyer">
+      <End Role="tbl_lawyer" EntitySet="tbl_lawyer" />
+      <End Role="tbl_login" EntitySet="tbl_login" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

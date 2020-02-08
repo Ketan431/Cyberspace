@@ -1,0 +1,211 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="panel.master.cs" Inherits="Cyberlaw.User.panel" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Cyber Space</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Cyberlaw</title>
+    <link rel="icon" href="../img/icon.png" />
+      
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css' />
+
+
+    <!-- Custom styles for this template -->
+    <link href="../css/agency.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <!-- My Style -->
+  <style>
+      
+      
+        .dropbtn {
+            background-color: #212529;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #212529;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #212529;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #212529;
+        }
+
+        .scrollFontSize {
+            font-size: 60px;
+        }
+
+        .image {
+            border-radius: 50% 50%;
+            border:2px groove #fed136;
+        }
+    </style>
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-image:url('../img/bg1.jpg')">
+    <form id="form1" runat="server">
+        <div>
+             <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+                <div class="container">
+                    <a class="navbar-brand scroll js-scroll-trigger" href="#page-top" style="font-size: 30px;">Cyber Space</a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        Menu
+            <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav  ml-auto">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="UserHome.aspx">Home</a>
+                            </li>
+                           
+                            <li class="dropdown nav-item">
+                                <a class="nav-link js-scroll-trigger" href="#drp1">More</a>
+                                <div class="dropdown-content" id="drp1">
+                                    <a class="nav-link js-scroll-trigger" href="http://www.123formbuilder.com/form-4959921/complaint-form">Complaint</a>
+                                    <a class="nav-link js-scroll-trigger" href="http://www.123formbuilder.com/form-4973893/booking-form">Lawyer's Help</a>
+                                    <a class="nav-link js-scroll-trigger" href="http://www.123formbuilder.com/form-4973938/online-feedback-form">FeedBack</a>
+                                    <a class="nav-link js-scroll-trigger" href="User_registration.aspx">Membership</a>
+                                </div>
+
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="sections.aspx">Cyberlaw IPC</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="Products.aspx">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="Seminar.aspx">Seminar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="View_profile.aspx">Profile</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="../Homepage.aspx">LogOut</a></li>
+                            
+                            <li class="nav-item">
+                                <asp:Label ID="usrname" runat="server" CssClass="nav-link js-scroll-trigger"></asp:Label>
+
+                            </li>
+                            <li class="nav-item">
+                                <asp:Image ID="Image1" runat="server" Height="45px" Width="45px" CssClass="image" />
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+            <!--Footer -->
+            <footer class="footer" style="margin-top:200px;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4" style="color:orange;">
+                            <span class="copyright">Copyright &copy; Cyberlaw 2019</span>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/ketu223" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="www.linkedin.com/in/ketan-bhenwal-371534190" target="_blank">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="list-inline quicklinks">
+                                <li class="list-inline-item">
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">Terms of Use</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+           
+        </div>
+    </form>
+       <!-- Bootstrap core JavaScript -->
+            <script src="../vendor/jquery/jquery.min.js"></script>
+            <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Plugin JavaScript -->
+            <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Contact form JavaScript -->
+            <script src="../js/jqBootstrapValidation.js"></script>
+            <script src="../js/contact_me.js"></script>
+
+            <!-- Custom scripts for this template -->   
+            <script src="../js/agency.min.js"></script>
+    
+
+</body>
+</html>

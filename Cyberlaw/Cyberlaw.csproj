@@ -1,0 +1,1138 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SourceLink.Create.CommandLine.2.8.3\build\SourceLink.Create.CommandLine.props" Condition="Exists('..\packages\SourceLink.Create.CommandLine.2.8.3\build\SourceLink.Create.CommandLine.props')" />
+  <Import Project="..\packages\Microsoft.ML.1.2.0\build\netstandard2.0\Microsoft.ML.props" Condition="Exists('..\packages\Microsoft.ML.1.2.0\build\netstandard2.0\Microsoft.ML.props')" />
+  <Import Project="..\packages\Microsoft.ML.CpuMath.1.2.0\build\netstandard2.0\Microsoft.ML.CpuMath.props" Condition="Exists('..\packages\Microsoft.ML.CpuMath.1.2.0\build\netstandard2.0\Microsoft.ML.CpuMath.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E541D66-3CC7-4426-9315-60F8C173842B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cyberlaw</RootNamespace>
+    <AssemblyName>Cyberlaw</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44323</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebaseAuthentication.net.3.4.0\lib\netstandard1.1\Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp.Serialization.JsonNet, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.Serialization.JsonNet.1.1.0\lib\net45\FireSharp.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.36.1\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.36.1\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.36.1\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.36.1\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.36.1\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Builder, Version=4.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bot.Builder.4.6.3\lib\netstandard2.0\Microsoft.Bot.Builder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Connector, Version=4.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bot.Connector.4.6.3\lib\netstandard2.0\Microsoft.Bot.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Schema, Version=4.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bot.Schema.4.6.3\lib\netstandard2.0\Microsoft.Bot.Schema.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Streaming, Version=4.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bot.Streaming.4.6.3\lib\netstandard2.0\Microsoft.Bot.Streaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Http.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.5.2.0\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.2.1\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.5.2.1\lib\net451\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.5.2.1\lib\net451\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.2.1\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.1.2.0\lib\netstandard2.0\Microsoft.ML.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ML.CpuMath, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.CpuMath.1.2.0\lib\netstandard2.0\Microsoft.ML.CpuMath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ML.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.1.2.0\lib\netstandard2.0\Microsoft.ML.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ML.DataView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.DataView.1.2.0\lib\netstandard2.0\Microsoft.ML.DataView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.KMeansClustering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.1.2.0\lib\netstandard2.0\Microsoft.ML.KMeansClustering.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ML.PCA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.1.2.0\lib\netstandard2.0\Microsoft.ML.PCA.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ML.StandardTrainers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.1.2.0\lib\netstandard2.0\Microsoft.ML.StandardTrainers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Transforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.1.2.0\lib\netstandard2.0\Microsoft.ML.Transforms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.0.1\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.20\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.4.4.0\lib\net461\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.2.1\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.8.0\lib\netstandard2.0\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\add_products.aspx" />
+    <Content Include="Admin\Admin_dashboard.aspx" />
+    <Content Include="Admin\Admin_Details.aspx" />
+    <Content Include="Admin\Admin_mails.aspx" />
+    <Content Include="Admin\assets\css\animate.min.css" />
+    <Content Include="Admin\assets\css\bootstrap.min.css" />
+    <Content Include="Admin\assets\css\demo.css" />
+    <Content Include="Admin\assets\css\light-bootstrap-dashboard.css" />
+    <Content Include="Admin\assets\css\pe-icon-7-stroke.css" />
+    <Content Include="Admin\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Admin\assets\img\bg2.gif" />
+    <Content Include="Admin\assets\img\cancel.png" />
+    <Content Include="Admin\assets\img\default-avatar.png" />
+    <Content Include="Admin\assets\img\delete.png" />
+    <Content Include="Admin\assets\img\edit.png" />
+    <Content Include="Admin\assets\img\faces\face-0.jpg" />
+    <Content Include="Admin\assets\img\faces\face-1.jpg" />
+    <Content Include="Admin\assets\img\faces\face-2.jpg" />
+    <Content Include="Admin\assets\img\faces\face-3.jpg" />
+    <Content Include="Admin\assets\img\faces\face-4.jpg" />
+    <Content Include="Admin\assets\img\faces\face-5.jpg" />
+    <Content Include="Admin\assets\img\faces\face-6.jpg" />
+    <Content Include="Admin\assets\img\faces\face-7.jpg" />
+    <Content Include="Admin\assets\img\faces\tim_vector.jpe" />
+    <Content Include="Admin\assets\img\favicon.ico" />
+    <Content Include="Admin\assets\img\full-screen-image-3.jpg" />
+    <Content Include="Admin\assets\img\glass1.gif" />
+    <Content Include="Admin\assets\img\loading-bubbles.svg" />
+    <Content Include="Admin\assets\img\mask.png" />
+    <Content Include="Admin\assets\img\new_logo.png" />
+    <Content Include="Admin\assets\img\products\1.jpg" />
+    <Content Include="Admin\assets\img\products\2.jfif" />
+    <Content Include="Admin\assets\img\products\3.jpg" />
+    <Content Include="Admin\assets\img\products\4.jfif" />
+    <Content Include="Admin\assets\img\products\5.jfif" />
+    <Content Include="Admin\assets\img\products\6.jfif" />
+    <Content Include="img\security\security1.jpg" />
+    <Content Include="img\security\security2.png" />
+    <Content Include="img\security\security3.jpg" />
+    <Content Include="Admin\assets\img\sidebar-1.jpg" />
+    <Content Include="Admin\assets\img\sidebar-2.jpg" />
+    <Content Include="Admin\assets\img\sidebar-3.jpg" />
+    <Content Include="Admin\assets\img\sidebar-4.jpg" />
+    <Content Include="Admin\assets\img\sidebar-5.jpg" />
+    <Content Include="Admin\assets\img\tim_80x80.png" />
+    <Content Include="Admin\assets\img\update.png" />
+    <Content Include="Admin\assets\js\bootstrap-notify.js" />
+    <Content Include="Admin\assets\js\bootstrap-select.js" />
+    <Content Include="Admin\assets\js\bootstrap.min.js" />
+    <Content Include="Admin\assets\js\chartist.min.js" />
+    <Content Include="Admin\assets\js\demo.js" />
+    <Content Include="Admin\assets\js\jquery.3.2.1.min.js" />
+    <Content Include="Admin\assets\js\light-bootstrap-dashboard.js" />
+    <Content Include="Admin\assets\script\fusioncharts.charts.js" />
+    <Content Include="Admin\assets\script\fusioncharts.excelexport.js" />
+    <Content Include="Admin\assets\script\fusioncharts.gantt.js" />
+    <Content Include="Admin\assets\script\fusioncharts.js" />
+    <Content Include="Admin\assets\script\fusioncharts.maps.js" />
+    <Content Include="Admin\assets\script\fusioncharts.overlappedbar2d.js" />
+    <Content Include="Admin\assets\script\fusioncharts.overlappedcolumn2d.js" />
+    <Content Include="Admin\assets\script\fusioncharts.powercharts.js" />
+    <Content Include="Admin\assets\script\fusioncharts.theme.candy.js" />
+    <Content Include="Admin\assets\script\fusioncharts.theme.carbon.js" />
+    <Content Include="Admin\assets\script\fusioncharts.theme.fint.js" />
+    <Content Include="Admin\assets\script\fusioncharts.theme.fusion.js" />
+    <Content Include="Admin\assets\script\fusioncharts.theme.gammel.js" />
+    <Content Include="Admin\assets\script\fusioncharts.theme.ocean.js" />
+    <Content Include="Admin\assets\script\fusioncharts.theme.umber.js" />
+    <Content Include="Admin\assets\script\fusioncharts.theme.zune.js" />
+    <Content Include="Admin\assets\script\fusioncharts.timeseries.js" />
+    <Content Include="Admin\assets\script\fusioncharts.treemap.js" />
+    <Content Include="Admin\assets\script\fusioncharts.usa.js" />
+    <Content Include="Admin\assets\script\fusioncharts.vml.js" />
+    <Content Include="Admin\assets\script\fusioncharts.widgets.js" />
+    <Content Include="Admin\assets\script\fusioncharts.world.js" />
+    <Content Include="Admin\assets\script\fusioncharts.zoomline.js" />
+    <Content Include="Admin\assets\script\fusioncharts.zoomscatter.js" />
+    <Content Include="Admin\Control_panel.aspx" />
+    <Content Include="Admin\feedback_report.aspx" />
+    <Content Include="Admin\Lawyerpanel.aspx" />
+    <Content Include="Admin\Report.aspx" />
+    <Content Include="Admin\Security_resources.aspx" />
+    <Content Include="Admin\User_panel.aspx" />
+    <Content Include="Admin\View_profile.aspx" />
+    <Content Include="admin_login.aspx" />
+    <Content Include="bin\Google.Protobuf.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.ML.Api.dll" />
+    <Content Include="bin\Microsoft.ML.Core.dll" />
+    <Content Include="bin\Microsoft.ML.CpuMath.dll" />
+    <Content Include="bin\Microsoft.ML.Data.dll" />
+    <Content Include="bin\Microsoft.ML.dll" />
+    <Content Include="bin\Microsoft.ML.FastTree.dll" />
+    <Content Include="bin\Microsoft.ML.InternalStreams.dll" />
+    <Content Include="bin\Microsoft.ML.KMeansClustering.dll" />
+    <Content Include="bin\Microsoft.ML.Maml.dll" />
+    <Content Include="bin\Microsoft.ML.PCA.dll" />
+    <Content Include="bin\Microsoft.ML.PipelineInference.dll" />
+    <Content Include="bin\Microsoft.ML.ResultProcessor.dll" />
+    <Content Include="bin\Microsoft.ML.StandardLearners.dll" />
+    <Content Include="bin\Microsoft.ML.Sweeper.dll" />
+    <Content Include="bin\Microsoft.ML.Transforms.dll" />
+    <Content Include="bin\Microsoft.ML.UniversalModelFormat.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.CodeDom.dll" />
+    <Content Include="bin\System.Threading.Tasks.Dataflow.dll" />
+    <Content Include="css\agency.css" />
+    <Content Include="css\agency.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
+    <Content Include="Homepage.aspx" />
+    <Content Include="img\about\1.jpg" />
+    <Content Include="img\about\2.jpg" />
+    <Content Include="img\about\3.jpg" />
+    <Content Include="img\about\4.jpg" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\bg1.jpg" />
+    <Content Include="img\contact.jpg" />
+    <Content Include="img\icon.png" />
+    <Content Include="img\index.html" />
+    <Content Include="img\login.png" />
+    <Content Include="img\logos\creative-market.jpg" />
+    <Content Include="img\logos\designmodo.jpg" />
+    <Content Include="img\logos\envato.jpg" />
+    <Content Include="img\logos\themeforest.jpg" />
+    <Content Include="img\map-image.png" />
+    <Content Include="img\portfolio\news1.jpg" />
+    <Content Include="img\portfolio\news1_full.jpg" />
+    <Content Include="img\portfolio\news2.jpg" />
+    <Content Include="img\portfolio\news2_full.jpg" />
+    <Content Include="img\portfolio\news3.png" />
+    <Content Include="img\portfolio\news3_full.png" />
+    <Content Include="img\portfolio\news4.jpg" />
+    <Content Include="img\portfolio\news4_full.jpg" />
+    <Content Include="img\portfolio\news5.jpg" />
+    <Content Include="img\portfolio\news5_full.jpg" />
+    <Content Include="img\portfolio\news6.jpg" />
+    <Content Include="img\portfolio\news6_full.jpg" />
+    <Content Include="img\products\1.jpg" />
+    <Content Include="img\products\2.jfif" />
+    <Content Include="img\products\3.jpg" />
+    <Content Include="img\products\4.jfif" />
+    <Content Include="img\products\5.jfif" />
+    <Content Include="img\products\6.jfif" />
+    <Content Include="img\team\1.jpg" />
+    <Content Include="img\team\2.jpg" />
+    <Content Include="img\team\3.jpg" />
+    <Content Include="js\agency.js" />
+    <Content Include="js\agency.min.js" />
+    <Content Include="js\contact_me.js" />
+    <Content Include="js\jqBootstrapValidation.js" />
+    <Content Include="Lawyer\Appointment_details.aspx" />
+    <Content Include="Lawyer\assets\css\animate.min.css" />
+    <Content Include="Lawyer\assets\css\bootstrap.min.css" />
+    <Content Include="Lawyer\assets\css\demo.css" />
+    <Content Include="Lawyer\assets\css\light-bootstrap-dashboard.css" />
+    <Content Include="Lawyer\assets\css\pe-icon-7-stroke.css" />
+    <Content Include="Lawyer\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Lawyer\assets\img\add.png" />
+    <Content Include="Lawyer\assets\img\bg2.gif" />
+    <Content Include="Lawyer\assets\img\cancel.png" />
+    <Content Include="Lawyer\assets\img\default-avatar.png" />
+    <Content Include="Lawyer\assets\img\delete.png" />
+    <Content Include="Lawyer\assets\img\edit.png" />
+    <Content Include="Lawyer\assets\img\faces\face-0.jpg" />
+    <Content Include="Lawyer\assets\img\faces\face-1.jpg" />
+    <Content Include="Lawyer\assets\img\faces\face-2.jpg" />
+    <Content Include="Lawyer\assets\img\faces\face-3.jpg" />
+    <Content Include="Lawyer\assets\img\faces\face-4.jpg" />
+    <Content Include="Lawyer\assets\img\faces\face-5.jpg" />
+    <Content Include="Lawyer\assets\img\faces\face-6.jpg" />
+    <Content Include="Lawyer\assets\img\faces\face-7.jpg" />
+    <Content Include="Lawyer\assets\img\faces\tim_vector.jpe" />
+    <Content Include="Lawyer\assets\img\favicon.ico" />
+    <Content Include="Lawyer\assets\img\full-screen-image-3.jpg" />
+    <Content Include="Lawyer\assets\img\glass1.gif" />
+    <Content Include="Lawyer\assets\img\loading-bubbles.svg" />
+    <Content Include="Lawyer\assets\img\mask.png" />
+    <Content Include="Lawyer\assets\img\new_logo.png" />
+    <Content Include="Lawyer\assets\img\sidebar-1.jpg" />
+    <Content Include="Lawyer\assets\img\sidebar-2.jpg" />
+    <Content Include="Lawyer\assets\img\sidebar-3.jpg" />
+    <Content Include="Lawyer\assets\img\sidebar-4.jpg" />
+    <Content Include="Lawyer\assets\img\sidebar-5.jpg" />
+    <Content Include="Lawyer\assets\img\tim_80x80.png" />
+    <Content Include="Lawyer\assets\img\update.png" />
+    <Content Include="Lawyer\assets\js\bootstrap-notify.js" />
+    <Content Include="Lawyer\assets\js\bootstrap-select.js" />
+    <Content Include="Lawyer\assets\js\bootstrap.min.js" />
+    <Content Include="Lawyer\assets\js\chartist.min.js" />
+    <Content Include="Lawyer\assets\js\demo.js" />
+    <Content Include="Lawyer\assets\js\jquery.3.2.1.min.js" />
+    <Content Include="Lawyer\assets\js\light-bootstrap-dashboard.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.charts.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.excelexport.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.gantt.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.maps.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.overlappedbar2d.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.overlappedcolumn2d.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.powercharts.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.theme.candy.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.theme.carbon.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.theme.fint.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.theme.fusion.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.theme.gammel.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.theme.ocean.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.theme.umber.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.theme.zune.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.timeseries.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.treemap.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.usa.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.vml.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.widgets.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.world.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.zoomline.js" />
+    <Content Include="Lawyer\assets\script\fusioncharts.zoomscatter.js" />
+    <Content Include="Lawyer\Complaint_details.aspx" />
+    <Content Include="Lawyer\dashboard.aspx" />
+    <Content Include="Lawyer\Feedback.aspx" />
+    <Content Include="Lawyer\IPCSections.aspx" />
+    <Content Include="Lawyer\Lawyer_mails.aspx" />
+    <Content Include="Lawyer\Lawyer_profile.aspx" />
+    <Content Include="Lawyer\Report.aspx" />
+    <Content Include="Lawyer\View_profile.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="mail\contact_me.php" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\FusionCharts\fusioncharts.charts.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.excelexport.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.gantt.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.maps.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.overlappedbar2d.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.overlappedcolumn2d.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.powercharts.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.timeseries.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.treemap.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.vml.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.widgets.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.zoomline.js" />
+    <Content Include="Scripts\FusionCharts\fusioncharts.zoomscatter.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.candy.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.carbon.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.fint.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.fusion.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.gammel.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.ocean.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.umber.js" />
+    <Content Include="Scripts\FusionCharts\themes\fusioncharts.theme.zune.js" />
+    <Content Include="User\JavaScript.js" />
+    <Content Include="User\Products.aspx" />
+    <Content Include="User\sections.aspx" />
+    <Content Include="User\Seminar.aspx" />
+    <Content Include="User\style.css" />
+    <Content Include="User\UserHome.aspx" />
+    <Content Include="User\User_registration.aspx" />
+    <Content Include="User\View_profile.aspx" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\fontawesome-free\css\all.css" />
+    <Content Include="vendor\fontawesome-free\css\all.min.css" />
+    <Content Include="vendor\fontawesome-free\css\brands.css" />
+    <Content Include="vendor\fontawesome-free\css\brands.min.css" />
+    <Content Include="vendor\fontawesome-free\css\fontawesome.css" />
+    <Content Include="vendor\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="vendor\fontawesome-free\css\regular.css" />
+    <Content Include="vendor\fontawesome-free\css\regular.min.css" />
+    <Content Include="vendor\fontawesome-free\css\solid.css" />
+    <Content Include="vendor\fontawesome-free\css\solid.min.css" />
+    <Content Include="vendor\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="vendor\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="vendor\fontawesome-free\css\v4-shims.css" />
+    <Content Include="vendor\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\jquery\jquery.slim.js" />
+    <Content Include="vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\add_products.aspx.cs">
+      <DependentUpon>add_products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_products.aspx.designer.cs">
+      <DependentUpon>add_products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_dashboard.aspx.cs">
+      <DependentUpon>Admin_dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_dashboard.aspx.designer.cs">
+      <DependentUpon>Admin_dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_Details.aspx.cs">
+      <DependentUpon>Admin_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_Details.aspx.designer.cs">
+      <DependentUpon>Admin_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_mails.aspx.cs">
+      <DependentUpon>Admin_mails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_mails.aspx.designer.cs">
+      <DependentUpon>Admin_mails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Control_panel.aspx.cs">
+      <DependentUpon>Control_panel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Control_panel.aspx.designer.cs">
+      <DependentUpon>Control_panel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\feedback_report.aspx.cs">
+      <DependentUpon>feedback_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\feedback_report.aspx.designer.cs">
+      <DependentUpon>feedback_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Lawyerpanel.aspx.cs">
+      <DependentUpon>Lawyerpanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Lawyerpanel.aspx.designer.cs">
+      <DependentUpon>Lawyerpanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\panel.Master.cs">
+      <DependentUpon>panel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\panel.Master.designer.cs">
+      <DependentUpon>panel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Security_resources.aspx.cs">
+      <DependentUpon>Security_resources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Security_resources.aspx.designer.cs">
+      <DependentUpon>Security_resources.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User_panel.aspx.cs">
+      <DependentUpon>User_panel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User_panel.aspx.designer.cs">
+      <DependentUpon>User_panel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View_profile.aspx.cs">
+      <DependentUpon>View_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\View_profile.aspx.designer.cs">
+      <DependentUpon>View_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_login.aspx.cs">
+      <DependentUpon>admin_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_login.aspx.designer.cs">
+      <DependentUpon>admin_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\Appointment_details.aspx.cs">
+      <DependentUpon>Appointment_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\Appointment_details.aspx.designer.cs">
+      <DependentUpon>Appointment_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\Complaint_details.aspx.cs">
+      <DependentUpon>Complaint_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\Complaint_details.aspx.designer.cs">
+      <DependentUpon>Complaint_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\IPCSections.aspx.cs">
+      <DependentUpon>IPCSections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\IPCSections.aspx.designer.cs">
+      <DependentUpon>IPCSections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\LawyerPanel.Master.cs">
+      <DependentUpon>LawyerPanel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\LawyerPanel.Master.designer.cs">
+      <DependentUpon>LawyerPanel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\Lawyer_mails.aspx.cs">
+      <DependentUpon>Lawyer_mails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\Lawyer_mails.aspx.designer.cs">
+      <DependentUpon>Lawyer_mails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\Lawyer_profile.aspx.cs">
+      <DependentUpon>Lawyer_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\Lawyer_profile.aspx.designer.cs">
+      <DependentUpon>Lawyer_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lawyer\View_profile.aspx.cs">
+      <DependentUpon>View_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lawyer\View_profile.aspx.designer.cs">
+      <DependentUpon>View_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\panel.Master.cs">
+      <DependentUpon>panel.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\panel.Master.designer.cs">
+      <DependentUpon>panel.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\sections.aspx.cs">
+      <DependentUpon>sections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\sections.aspx.designer.cs">
+      <DependentUpon>sections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Seminar.aspx.cs">
+      <DependentUpon>Seminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Seminar.aspx.designer.cs">
+      <DependentUpon>Seminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserHome.aspx.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserHome.aspx.designer.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User_registration.aspx.cs">
+      <DependentUpon>User_registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User_registration.aspx.designer.cs">
+      <DependentUpon>User_registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\View_profile.aspx.cs">
+      <DependentUpon>View_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\View_profile.aspx.designer.cs">
+      <DependentUpon>View_profile.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\Cyberlaw.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\Cyberlaw.csprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include=".gitignore" />
+    <Content Include=".travis.yml" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="libman.json" />
+    <Content Include="Admin\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Admin\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Admin\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_cards.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_icons.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_labels.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="Admin\assets\sass\lbd\_alerts.scss" />
+    <Content Include="Admin\assets\sass\lbd\_buttons.scss" />
+    <Content Include="Admin\assets\sass\lbd\_cards.scss" />
+    <Content Include="Admin\assets\sass\lbd\_chartist.scss" />
+    <Content Include="Admin\assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="Admin\assets\sass\lbd\_dropdown.scss" />
+    <Content Include="Admin\assets\sass\lbd\_footers.scss" />
+    <Content Include="Admin\assets\sass\lbd\_inputs.scss" />
+    <Content Include="Admin\assets\sass\lbd\_misc.scss" />
+    <Content Include="Admin\assets\sass\lbd\_mixins.scss" />
+    <Content Include="Admin\assets\sass\lbd\_navbars.scss" />
+    <Content Include="Admin\assets\sass\lbd\_responsive.scss" />
+    <Content Include="Admin\assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="Admin\assets\sass\lbd\_tables.scss" />
+    <Content Include="Admin\assets\sass\lbd\_typography.scss" />
+    <Content Include="Admin\assets\sass\lbd\_variables.scss" />
+    <Content Include="Admin\assets\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="Admin\assets\js\data.json" />
+    <Content Include="Admin\panel.Master" />
+    <Content Include="Lawyer\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Lawyer\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Lawyer\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Lawyer\assets\js\data.json" />
+    <Content Include="Lawyer\assets\sass\lbd\_alerts.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_buttons.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_cards.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_chartist.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_dropdown.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_footers.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_inputs.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_misc.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_mixins.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_navbars.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_responsive.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_tables.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_typography.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\_variables.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_cards.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_icons.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_labels.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="Lawyer\assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="Lawyer\assets\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="Lawyer\LawyerPanel.Master" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="scss\agency.scss" />
+    <Content Include="scss\base\_mixins.scss" />
+    <Content Include="scss\base\_page.scss" />
+    <Content Include="scss\base\_variables.scss" />
+    <Content Include="scss\components\_buttons.scss" />
+    <Content Include="scss\components\_navbar.scss" />
+    <Content Include="scss\layout\_contact.scss" />
+    <Content Include="scss\layout\_footer.scss" />
+    <Content Include="scss\layout\_masthead.scss" />
+    <Content Include="scss\layout\_portfolio.scss" />
+    <Content Include="scss\layout\_services.scss" />
+    <Content Include="scss\layout\_team.scss" />
+    <Content Include="scss\layout\_timeline.scss" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="vendor\jquery\jquery.min.map" />
+    <Content Include="vendor\jquery\jquery.slim.min.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="User\panel.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\files\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="vendor\NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56318</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56318/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.CpuMath.1.2.0\build\netstandard2.0\Microsoft.ML.CpuMath.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.CpuMath.1.2.0\build\netstandard2.0\Microsoft.ML.CpuMath.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.1.2.0\build\netstandard2.0\Microsoft.ML.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.1.2.0\build\netstandard2.0\Microsoft.ML.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.1.2.0\build\netstandard2.0\Microsoft.ML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.1.2.0\build\netstandard2.0\Microsoft.ML.targets'))" />
+    <Error Condition="!Exists('..\packages\SourceLink.Create.CommandLine.2.8.3\build\SourceLink.Create.CommandLine.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SourceLink.Create.CommandLine.2.8.3\build\SourceLink.Create.CommandLine.props'))" />
+    <Error Condition="!Exists('..\packages\SourceLink.Create.CommandLine.2.8.3\build\SourceLink.Create.CommandLine.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SourceLink.Create.CommandLine.2.8.3\build\SourceLink.Create.CommandLine.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ML.1.2.0\build\netstandard2.0\Microsoft.ML.targets" Condition="Exists('..\packages\Microsoft.ML.1.2.0\build\netstandard2.0\Microsoft.ML.targets')" />
+  <Import Project="..\packages\SourceLink.Create.CommandLine.2.8.3\build\SourceLink.Create.CommandLine.targets" Condition="Exists('..\packages\SourceLink.Create.CommandLine.2.8.3\build\SourceLink.Create.CommandLine.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

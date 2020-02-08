@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8ff208610d35488381d9a1a5dba1bba3" Name="Diagram1">
+        <EntityTypeShape EntityType="cyberlawModel.admin" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.complain" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.member" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.message" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.report" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.tbl_lawyer" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.tblproduct" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.user_login" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.feedback" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.section" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.tbl_appointment" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cyberlawModel.tbl_login" Width="1.5" PointX="8" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="cyberlawModel.FK_tbl_login_admin" ManuallyRouted="false" />
+        <AssociationConnector Association="cyberlawModel.FK_members_user_login" ManuallyRouted="false" />
+        <AssociationConnector Association="cyberlawModel.FK_tbl_login_tbl_lawyer" ManuallyRouted="false" />
+        <AssociationConnector Association="cyberlawModel.FK_Table_1_Table_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

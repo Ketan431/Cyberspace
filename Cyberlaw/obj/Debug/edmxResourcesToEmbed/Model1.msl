@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cyberlawModelStoreContainer" CdmEntityContainer="cyberlawEntities">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="cyberlawModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="u_name" ColumnName="u_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="f_name" ColumnName="f_name" />
+          <ScalarProperty Name="l_name" ColumnName="l_name" />
+          <ScalarProperty Name="addr" ColumnName="addr" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="p_code" ColumnName="p_code" />
+          <ScalarProperty Name="about" ColumnName="about" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="complains">
+      <EntityTypeMapping TypeName="cyberlawModel.complain">
+        <MappingFragment StoreEntitySet="complain">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_email" ColumnName="c_email" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="complain1" ColumnName="complain" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="members">
+      <EntityTypeMapping TypeName="cyberlawModel.member">
+        <MappingFragment StoreEntitySet="members">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="member_id" ColumnName="member_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="membership" ColumnName="membership" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="messages">
+      <EntityTypeMapping TypeName="cyberlawModel.message">
+        <MappingFragment StoreEntitySet="messages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="from" ColumnName="from" />
+          <ScalarProperty Name="to" ColumnName="to" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="message1" ColumnName="message" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reports">
+      <EntityTypeMapping TypeName="cyberlawModel.report">
+        <MappingFragment StoreEntitySet="report">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="analysis" ColumnName="analysis" />
+          <ScalarProperty Name="t_complains" ColumnName="t_complains" />
+          <ScalarProperty Name="t_appoint" ColumnName="t_appoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_lawyer">
+      <EntityTypeMapping TypeName="cyberlawModel.tbl_lawyer">
+        <MappingFragment StoreEntitySet="tbl_lawyer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lawyer_id" ColumnName="lawyer_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="achieve" ColumnName="achieve" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblproducts">
+      <EntityTypeMapping TypeName="cyberlawModel.tblproduct">
+        <MappingFragment StoreEntitySet="tblproducts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="prodID" ColumnName="prodID" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="prodname" ColumnName="prodname" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="productdesc" ColumnName="productdesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_login">
+      <EntityTypeMapping TypeName="cyberlawModel.user_login">
+        <MappingFragment StoreEntitySet="user_login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="feedbacks">
+      <EntityTypeMapping TypeName="cyberlawModel.feedback">
+        <MappingFragment StoreEntitySet="feedback">
+          <ScalarProperty Name="usrname" ColumnName="usrname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="feedback1" ColumnName="feedback" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sections">
+      <EntityTypeMapping TypeName="cyberlawModel.section">
+        <MappingFragment StoreEntitySet="section">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Sections" ColumnName="Sections" />
+          <ScalarProperty Name="Offences" ColumnName="Offences" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_appointment">
+      <EntityTypeMapping TypeName="cyberlawModel.tbl_appointment">
+        <MappingFragment StoreEntitySet="tbl_appointment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_email" ColumnName="c_email" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="purpose" ColumnName="purpose" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_login">
+      <EntityTypeMapping TypeName="cyberlawModel.tbl_login">
+        <MappingFragment StoreEntitySet="tbl_login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="category" ColumnName="category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
